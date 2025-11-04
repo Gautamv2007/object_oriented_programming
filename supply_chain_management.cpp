@@ -32,7 +32,7 @@ public:
   void updateQuantity(int qty){
     quantity += qty;
   }
-}
+};
 
 class SupplyChain {
   private:
@@ -76,7 +76,7 @@ class SupplyChain {
 };
 
 int main(void){
-  Supplychain sc;
+  SupplyChain sc;
   sc.addProduct(1, "Rice", 50, 40.0);
   sc.addProduct(2, "Sugar", 30, 35.5);
   sc.addProduct(3, "Oil", 20, 120.0);
