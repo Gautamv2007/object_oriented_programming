@@ -39,7 +39,7 @@ class SupplyChain {
     Product* products[100];
     int count;
   public:
-    Supplychain() {count = 0;}
+    SupplyChain() {count = 0;}
     void addProduct(int id, string name, int qty, double price){
       products[count] = new Product(id, name, qty, price);
       count++;
@@ -65,7 +65,7 @@ class SupplyChain {
       for(int i = 0;i<count;i++){
         if (products[i]->getId() ==id){
           if (products[i]->getQuantity() >= qty){
-            product[i]->updateQuantity(-qty);
+            products[i]->updateQuantity(-qty);
           }else {
             cout << "Not enough stock";
           }
@@ -73,7 +73,7 @@ class SupplyChain {
         }
       }
     }
-}
+};
 
 int main(void){
   Supplychain sc;
