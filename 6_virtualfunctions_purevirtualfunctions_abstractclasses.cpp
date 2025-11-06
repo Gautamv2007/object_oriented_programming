@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//A virtual function is a function that is defined in the base class and redefined int the derived class
+//A virtual function is a function that is defined in the base class and redefined in the derived class
 class Instrument {
 public:
     // virtual void MakeSound(){

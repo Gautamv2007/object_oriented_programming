@@ -27,7 +27,7 @@ public:
             for(int j = 0;j<m.col;j++){
                 out << m.data[i][j] << " ";
             }
-            cout << endl;
+            out << endl;
         }
         return out;
     }
@@ -46,9 +46,10 @@ public:
         Matrix temp(row, m.col);
         for(int i = 0;i<row;i++){
             for(int j = 0;j<m.col;j++){
-                int s = 0;
+                // int s = 0;
+                temp.data[i][j] = 0;
                 for(int k = 0;k<m.row;k++){
-                    temp.data[i][j] += data[i][j] * m.data[j][k];
+                    temp.data[i][j] += data[i][k] * m.data[k][j];
                 }
             }
         }
@@ -58,10 +59,16 @@ public:
         Matrix temp(col, row);
         for(int i = 0;i<row;i++){
             for(int j = 0;j<col;j++){
-                temp.data[i][j] = data[j][i];
+                temp.data[j][i] = data[i][j];
             }
         }
         return temp;
+    }
+    ~Matrix(){
+        for(int i = 0;i<row;i++){
+            delete [] data[i];
+        }
+        delete[] data;
     }
 
 };
